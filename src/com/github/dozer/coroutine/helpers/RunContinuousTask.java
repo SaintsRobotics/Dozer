@@ -7,12 +7,20 @@ public abstract class RunContinuousTask extends Task {
   @Override
   protected void runTask() {
     while (true) {
-      runContinuously();
+      if(runContinuously()) break;
     }
   }
-
+  /*
+   * 
+   */
+  protected boolean runContinuously() {
+	  runForever();
+	  return false;
+  }
   /**
    * Runs this method in a while loop. Must wait inside.
    */
-  protected abstract void runContinuously();
+  protected void runForever() {
+	  
+  }
 }

@@ -1,8 +1,6 @@
 package com.github.dozer.input.sensors;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LimitSwitch {
 

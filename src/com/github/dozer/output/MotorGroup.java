@@ -2,7 +2,6 @@ package com.github.dozer.output;
 
 import java.util.ArrayList;
 import java.util.List;
-import edu.wpi.first.wpilibj.DriverStation;
 
 public class MotorGroup {
 

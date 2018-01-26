@@ -1,10 +1,6 @@
-package com.saintsrobotics.framework.coroutine.helpers;
+package com.github.dozer.coroutine.helpers;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
-import com.saintsrobotics.framework.coroutine.Task;
+import com.github.dozer.coroutine.Task;
 
 		
 public class RunSequentialTask extends Task {

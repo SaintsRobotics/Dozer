@@ -10,8 +10,8 @@ public abstract class Task extends Generator<BooleanSupplier> {
 
   protected Waiters wait = new Waiters();
 
-  protected BooleanSupplier waiter = () -> true;
-  protected Iterator<BooleanSupplier> iterator;
+  public BooleanSupplier waiter = () -> true;
+  public Iterator<BooleanSupplier> iterator;
 
   @Override
   protected void run() {
