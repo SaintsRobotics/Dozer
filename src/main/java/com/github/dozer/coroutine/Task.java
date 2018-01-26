@@ -1,4 +1,4 @@
-package com.saintsrobotics.framework.coroutine;
+package com.github.dozer.coroutine;
 
 
 import com.zoominfo.util.yieldreturn.Generator;
@@ -11,7 +11,7 @@ public abstract class Task extends Generator<BooleanSupplier> {
   protected Waiters wait = new Waiters();
 
   protected BooleanSupplier waiter = () -> true;
-  public Iterator<BooleanSupplier> iterator;
+  protected Iterator<BooleanSupplier> iterator;
 
   @Override
   protected void run() {

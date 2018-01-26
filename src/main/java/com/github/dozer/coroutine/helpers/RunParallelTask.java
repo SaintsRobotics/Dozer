@@ -1,4 +1,4 @@
-package com.saintsrobotics.framework.coroutine.helpers;
+package main.java.com.github.dozer.coroutine.helpers;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -7,6 +7,7 @@ import java.util.List;
 
 
 import com.saintsrobotics.framework.coroutine.Task;
+import com.saintsrobotics.framework.coroutine.helpers.RunContinuousTask;
 
 public class RunParallelTask extends RunContinuousTask {
 	
