@@ -3,7 +3,7 @@ package com.github.dozer.output;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MotorGroup {
+public class MotorGroup implements Motor{
 
   private Motor[] motors;
 
@@ -26,6 +26,12 @@ public class MotorGroup {
   public void set(double speed) {
     for (Motor motor : motors) {
       motor.set(speed);
+    }
+  }
+  
+  public void stop() {
+    for (Motor motor : motors) {
+      motor.stop();
     }
   }
 
