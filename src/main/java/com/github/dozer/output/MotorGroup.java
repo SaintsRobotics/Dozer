@@ -23,16 +23,19 @@ public class MotorGroup implements Motor{
     motors = motorList.toArray(new Motor[0]);
   }
 
+  @Override
   public void set(double speed) {
     for (Motor motor : motors) {
       motor.set(speed);
     }
   }
 
+  @Override
   public double get(){
     return motors[0].get();
   }
   
+  @Override
   public void stop() {
     for (Motor motor : motors) {
       motor.stop();
