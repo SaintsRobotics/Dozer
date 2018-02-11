@@ -28,6 +28,10 @@ public class MotorGroup implements Motor{
       motor.set(speed);
     }
   }
+
+  public double get(){
+    return motors[0].get();
+  }
   
   public void stop() {
     for (Motor motor : motors) {
