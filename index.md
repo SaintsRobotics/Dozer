@@ -1,6 +1,6 @@
 
 
-Dozer is a framework for robots built with [WPILib](https://github.com/wpilibsuite) to help write fluent, readable code.
+Dozer is a framework for robots built with [WPILib](https://github.com/wpilibsuite) to help write fluent, readable code. WPILib is a very common library teams competing in the FIRST Robotics Competition use write code for their robots. While WPILib does a great job providing APIs to interface with hardware components, we feel that its provided APIs to manage control flow are woefully inadequate. That's why we made Dozer.
 
 # Features
 
@@ -9,13 +9,10 @@ Dozer is a framework for robots built with [WPILib](https://github.com/wpilibsui
 
 # Getting Started
 
-:construction_worker:
-
 [Download a Release](https://github.com/FRC-Dozer/Dozer/releases/latest)
 
 Or add us as a dependency on Maven (coming soon)
 
-:construction:
 
 # Discord
 
