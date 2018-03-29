@@ -2,15 +2,23 @@ package com.github.dozer.output;
 
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.PWMTalonSRX;
+import edu.wpi.first.wpilibj.Timer;
 
 public class MotorRamping implements Motor{
-  public static final double MOTOR_RAMPING = 0.01;
 
   private SpeedController speedController;
+  private double motorRamping;
+  private double lastTime;
 
   public MotorRamping(SpeedController speedController, boolean inverted) {
+    this(speedController, inverted, 5);
+  }
+
+  public MotorRamping(SpeedController speedController, boolean inverted, double rampPerSecond) {
     this.speedController = speedController;
     this.speedController.setInverted(inverted);
+    this.motorRamping = rampPerSecond;
+    this.lastTime = System.currentTimeMillis();
   }
 
   private double setpoint = 0;
@@ -32,12 +40,13 @@ public class MotorRamping implements Motor{
   }
 
   public void update() {
-    if (Math.abs(setpoint - current) < MOTOR_RAMPING) {
+    double moveAmount = motorRamping * (System.currentTimeMillis() - this.lastTime);
+    if (Math.abs(setpoint - current) < moveAmount) {
       current = setpoint;
-    } else if (setpoint > current) {
-      current += MOTOR_RAMPING;
-    } else if (setpoint < current) {
-      current -= MOTOR_RAMPING;
+    } else if (setpoint > moveAmount) {
+      current += motorRamping;
+    } else if (setpoint < moveAmount) {
+      current -= motorRamping;
     }
     speedController.set(current);
   }

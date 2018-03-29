@@ -9,6 +9,7 @@ import java.util.function.BooleanSupplier;
 public abstract class Task extends Generator<BooleanSupplier> {
 
   protected Waiters wait = new Waiters();
+  private boolean stop = false;
 
   public BooleanSupplier waiter = () -> true;
   public Iterator<BooleanSupplier> iterator;
@@ -16,6 +17,7 @@ public abstract class Task extends Generator<BooleanSupplier> {
   @Override
   protected void run() {
     try {
+      if(this.stop) return;
       runTask();
     } catch (Throwable t) {
       DriverStation.reportError("TASK CRASHED: " + this.getClass().getName() + " \n" + t.toString(),
@@ -45,5 +47,9 @@ public abstract class Task extends Generator<BooleanSupplier> {
       long finalTimeMillis = (long) (secs * 1000) + System.currentTimeMillis();
       yield(() -> predicate.getAsBoolean() || finalTimeMillis < System.currentTimeMillis());
     }
+  }
+
+  public void free(){
+    this.stop = true;
   }
 }
