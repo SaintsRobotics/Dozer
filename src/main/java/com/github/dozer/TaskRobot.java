@@ -69,6 +69,10 @@ public abstract class TaskRobot extends IterativeRobot {
     this.runner = new TaskRunner(disabledTasks);
   }
 
+  public void disable(){
+    this.runner.disable();
+  }
+
   @Override
   public void robotPeriodic() {
     if (runner != null) {

@@ -20,11 +20,14 @@ public class TaskRunner {
   public void run() {
     if (disabled) {
       return;
+    }else{
+      this.mainTask.run();
     }
   }
 
   public void disable() {
     this.disabled = true;
+    this.free();
   }
   public void free(){
     this.mainTask.free();
