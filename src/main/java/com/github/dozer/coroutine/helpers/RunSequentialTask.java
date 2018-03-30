@@ -24,6 +24,6 @@ public class RunSequentialTask extends Task {
 		for(Task task: tasks){
 			task.free();
 		}
-		this.free();
+		super.free();
 	}
 }
