@@ -49,5 +49,6 @@ public class MotorRamping implements Motor{
       current -= motorRamping;
     }
     speedController.set(current);
+    this.lastTime = System.currentTimeMillis();
   }
 }
