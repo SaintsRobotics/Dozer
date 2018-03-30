@@ -20,4 +20,10 @@ public class RunSequentialTask extends Task {
 		  }
 	  }
   }
+	public void free(){
+		for(Task task: tasks){
+			task.free();
+		}
+		this.free();
+	}
 }

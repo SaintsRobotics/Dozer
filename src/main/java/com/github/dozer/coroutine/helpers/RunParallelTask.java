@@ -41,5 +41,12 @@ public class RunParallelTask extends RunContinuousTask {
 	  }
 	  return tasks.isEmpty();
   }
+
+  public void free(){
+		for(Task task: tasks){
+			task.free();
+		}
+		super.free();
+	}
 }
 
