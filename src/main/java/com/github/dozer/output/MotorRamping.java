@@ -44,10 +44,11 @@ public class MotorRamping implements Motor{
     if (Math.abs(setpoint - current) < moveAmount) {
       current = setpoint;
     } else if (setpoint > moveAmount) {
-      current += motorRamping;
+      current += moveAmount;
     } else if (setpoint < moveAmount) {
-      current -= motorRamping;
+      current -= moveAmount;
     }
     speedController.set(current);
+    this.lastTime = System.currentTimeMillis();
   }
 }
