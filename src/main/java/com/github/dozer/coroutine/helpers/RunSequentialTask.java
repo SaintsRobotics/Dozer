@@ -1,6 +1,8 @@
 package com.github.dozer.coroutine.helpers;
 
 import com.github.dozer.coroutine.Task;
+import com.github.dozer.coroutine.TaskRunner;
+
 
 		
 public class RunSequentialTask extends Task {
