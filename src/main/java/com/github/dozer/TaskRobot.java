@@ -6,9 +6,9 @@ import com.github.dozer.coroutine.Task;
 import com.github.dozer.coroutine.TaskRunner;
 
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.TimedRobot;
 
-public abstract class TaskRobot extends IterativeRobot {
+public abstract class TaskRobot extends TimedRobot {
 
   protected Task[] autonomousTasks;
   protected Task[] teleopTasks;
